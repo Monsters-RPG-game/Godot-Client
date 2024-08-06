@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c44hqd7x6rohq"]
+[gd_scene load_steps=11 format=3 uid="uid://c44hqd7x6rohq"]
 
+[ext_resource type="Script" path="res://scripts/scenes/Scene2.gd" id="1_bjbw6"]
 [ext_resource type="PackedScene" uid="uid://coae1gnb2olho" path="res://characters/player.tscn" id="1_qv5xp"]
 [ext_resource type="Texture2D" uid="uid://c0u8ko2u5f3wu" path="res://assets/maps/CustomTiles.png" id="2_yfak0"]
 [ext_resource type="Texture2D" uid="uid://mq0ov1njiw76" path="res://assets/maps/tiles_1.png" id="3_i7uju"]
@@ -3486,6 +3487,7 @@ sources/8 = SubResource("TileSetAtlasSource_sb73f")
 size = Vector2(9, 10)
 
 [node name="GameLevel" type="Node2D"]
+script = ExtResource("1_bjbw6")
 
 [node name="Player" parent="." instance=ExtResource("1_qv5xp")]
 position = Vector2(116, 136)
