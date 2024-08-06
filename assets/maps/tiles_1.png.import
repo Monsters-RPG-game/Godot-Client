@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ditfsa4xrontv"
-path="res://.godot/imported/Basic_Furniture.png-30faf9f306977e738e995bf130f12d4d.ctex"
+uid="uid://mq0ov1njiw76"
+path="res://.godot/imported/tiles_1.png-98063be5f34147b0a498cf5172759178.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png"
-dest_files=["res://.godot/imported/Basic_Furniture.png-30faf9f306977e738e995bf130f12d4d.ctex"]
+source_file="res://assets/maps/tiles_1.png"
+dest_files=["res://.godot/imported/tiles_1.png-98063be5f34147b0a498cf5172759178.ctex"]
 
 [params]
 

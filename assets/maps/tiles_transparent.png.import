@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do8l6rd8545cc"
-path="res://.godot/imported/Basic Charakter Actions.png-bc52f47cac047b05a8b1fc5fc3a02e8d.ctex"
+uid="uid://1kw7f4ybsbr2"
+path="res://.godot/imported/tiles_transparent.png-b923b3629e7d3738be7bab512a6cc0ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png"
-dest_files=["res://.godot/imported/Basic Charakter Actions.png-bc52f47cac047b05a8b1fc5fc3a02e8d.ctex"]
+source_file="res://assets/maps/tiles_transparent.png"
+dest_files=["res://.godot/imported/tiles_transparent.png-b923b3629e7d3738be7bab512a6cc0ab.ctex"]
 
 [params]
 

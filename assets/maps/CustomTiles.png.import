@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck78fogypg1sm"
-path="res://.godot/imported/Egg_And_Nest.png-60f072484ddc1cd2ded69a8f4665ade0.ctex"
+uid="uid://c0u8ko2u5f3wu"
+path="res://.godot/imported/CustomTiles.png-48bb047053d371e1e4fcad778d92ad53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png"
-dest_files=["res://.godot/imported/Egg_And_Nest.png-60f072484ddc1cd2ded69a8f4665ade0.ctex"]
+source_file="res://assets/maps/CustomTiles.png"
+dest_files=["res://.godot/imported/CustomTiles.png-48bb047053d371e1e4fcad778d92ad53.ctex"]
 
 [params]
 

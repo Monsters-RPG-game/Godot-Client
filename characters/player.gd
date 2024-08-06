@@ -37,3 +37,11 @@ func pickk_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().change_scene_to_file("res://levels/Scene2.tscn")
+
+
+func _on_area_second_map_entered(body):
+	get_tree().change_scene_to_file("res://levels/game_level.tscn")
