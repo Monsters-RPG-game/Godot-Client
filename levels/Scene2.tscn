@@ -3490,7 +3490,7 @@ size = Vector2(9, 10)
 script = ExtResource("1_bjbw6")
 
 [node name="Player" parent="." instance=ExtResource("1_qv5xp")]
-position = Vector2(116, 136)
+position = Vector2(200, 137)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -3509,7 +3509,7 @@ layer_2/name = "HighWalls"
 layer_2/tile_data = PackedInt32Array(5, 131078, 17)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(116, 136)
+position = Vector2(200, 137)
 
 [node name="Area2D" type="Area2D" parent="."]
 
