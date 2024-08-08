@@ -3517,4 +3517,4 @@ position = Vector2(200, 137)
 position = Vector2(199.5, 155)
 shape = SubResource("RectangleShape2D_e5nnf")
 
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_second_map_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_main_house_enter"]

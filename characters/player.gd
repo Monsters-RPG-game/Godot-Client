@@ -39,11 +39,6 @@ func pick_new_state():
 		state_machine.travel("Idle")
 
 
-func _on_area_second_map_entered(_body):
-	print('On area 2')
-	get_tree().change_scene_to_file("res://levels/Scene1.tscn")
-
-
 func _on_door_enter(_body):
 	print("Entered doors?")
 	get_tree().change_scene_to_file("res://levels/Scene2.tscn")
