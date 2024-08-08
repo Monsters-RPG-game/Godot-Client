@@ -25,23 +25,20 @@ func _physics_process(_delta):
 	# Move chracter 
 	move_and_slide()
 	
-	pickk_new_state()
+	pick_new_state()
 
 func update_animation_parameters(move_input : Vector2):
 	if(move_input != Vector2.ZERO):
 		animation_tree.set("parameters/Walk/blend_position", move_input)
 		animation_tree.set("parameters/Idle/blend_position", move_input)
 
-func pickk_new_state(): 
+func pick_new_state(): 
 	if(velocity != Vector2.ZERO):
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
 
 
-func _on_area_2d_body_entered(body):
+func _on_door_enter(_body):
+	print("Entered doors?")
 	get_tree().change_scene_to_file("res://levels/Scene2.tscn")
-
-
-func _on_area_second_map_entered(body):
-	get_tree().change_scene_to_file("res://levels/game_level.tscn")
