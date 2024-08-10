@@ -18,13 +18,8 @@ func _physics_process(_delta):
 		)
 		
 	update_animation_parameters(input_direction)
-
-	# Update velosoty
 	velocity = input_direction * move_speed
-	
-	# Move chracter 
 	move_and_slide()
-	
 	pick_new_state()
 
 func update_animation_parameters(move_input : Vector2):
@@ -37,7 +32,6 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
-
 
 func _on_door_enter(_body):
 	print("Entered doors?")
