@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Monsters"
-run/main_scene="res://levels/MainMenu.tscn"
+run/main_scene="res://levels/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSceneState="*res://scripts/sceneState.gd"
+GlobalSceneState="*res://scripts/shared/scene_state.gd"
 
 [display]
 
