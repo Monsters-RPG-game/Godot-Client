@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var starting_direction : Vector2 = Vector2(0, 1.1)
-
+signal player_attack(damage)
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var attack_timer = $AttackTimer  # Reference to the Timer node
@@ -10,6 +10,7 @@ const SPEED = 6000
 
 func _ready():
 	update_animation_parameter(starting_direction)
+
 
 func _physics_process(delta): 
 	var input_direction = Vector2(
@@ -54,3 +55,9 @@ func _on_attack_timer_timeout():
 
 func _on_area_2d_body_entered(_body):
 	get_tree().change_scene_to_file("res://scenes/secondlevel.tscn")
+
+
+func _on_sword_hit_area_entered(area):
+	if(area.name=='hurtbox'):
+		player_attack.emit(60)
+		print("HIT THI",area)
