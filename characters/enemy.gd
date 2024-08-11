@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-var hp=100
+@export var hp=100
 var is_dying=false
 
 @onready var player_node = get_node("/root/Node2D/Player")  # Adjust path to your scene structure

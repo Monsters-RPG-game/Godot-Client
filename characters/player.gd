@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-@export var starting_direction : Vector2 = Vector2(0, 1.1)
-signal player_attack(damage)
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var attack_timer = $AttackTimer  # Reference to the Timer node
+@export var starting_direction : Vector2 = Vector2(0, 1.1)
+@export var player_damage=60
+
+signal player_attack(damage)
 var is_attacking=false
 const SPEED = 6000
 
@@ -59,5 +61,5 @@ func _on_area_2d_body_entered(_body):
 
 func _on_sword_hit_area_entered(area):
 	if(area.name=='hurtbox'):
-		player_attack.emit(60)
+		player_attack.emit(player_damage)
 		print("HIT THI",area)
