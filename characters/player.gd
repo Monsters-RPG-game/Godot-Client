@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var attack_timer = $AttackTimer  # Reference to the Timer node
 @export var starting_direction : Vector2 = Vector2(0, 1.1)
 @export var player_damage=60
+@onready var character_sprite = $Sprite2D  # Character's sprite
 
 signal player_attack(damage)
 var is_attacking=false
@@ -15,6 +16,16 @@ func _ready():
 
 
 func _physics_process(delta): 
+	var nodes = get_tree().get_nodes_in_group("depth_sorted")
+	
+	for node in nodes:
+		var sprite=node.get_node("Sprite2D") as Sprite2D
+		print(sprite.z_index)
+		if node.global_position.y > self.global_position.y:
+			sprite.z_index=2
+		else:
+			sprite.z_index=0
+								
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")

@@ -3,13 +3,12 @@
 [ext_resource type="Script" path="res://characters/enemy.gd" id="1_l6bn0"]
 [ext_resource type="Texture2D" uid="uid://bllysvg8ki72g" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc.png" id="1_nncxs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vfpxb"]
-radius = 6.08276
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0gbo"]
+size = Vector2(8, 8)
 
-[sub_resource type="Animation" id="Animation_mjals"]
-resource_name = "idle"
-length = 1.8
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_ubn38"]
+resource_name = "die"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,10 +16,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 2, 3, 4, 5]
+"values": [40, 41, 42, 43]
 }
 
 [sub_resource type="Animation" id="Animation_1ejoi"]
@@ -39,9 +38,10 @@ tracks/0/keys = {
 "values": [32, 33, 34, 35]
 }
 
-[sub_resource type="Animation" id="Animation_ubn38"]
-resource_name = "die"
-length = 1.2
+[sub_resource type="Animation" id="Animation_mjals"]
+resource_name = "idle"
+length = 1.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,10 +49,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [40, 41, 42, 43]
+"values": [0, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_to2rk"]
@@ -69,13 +69,14 @@ radius = 6.08276
 script = ExtResource("1_l6bn0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2)
 texture = ExtResource("1_nncxs")
 hframes = 8
 vframes = 6
 frame = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vfpxb")
+shape = SubResource("RectangleShape2D_f0gbo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -85,4 +86,6 @@ libraries = {
 [node name="hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+z_index = 1
 shape = SubResource("CircleShape2D_ct1lw")
+metadata/_edit_lock_ = true
