@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
-@onready var attack_timer = $AttackTimer  # Reference to the Timer node
+@onready var attack_timer = $AttackTimer  
 @export var starting_direction : Vector2 = Vector2(0, 1.1)
 @export var player_damage=60
-@onready var character_sprite = $Sprite2D  # Character's sprite
+@onready var character_sprite = $Sprite2D  
 
 signal player_attack(damage)
 var is_attacking=false
@@ -20,7 +20,6 @@ func _physics_process(delta):
 	
 	for node in nodes:
 		var sprite=node.get_node("Sprite2D") as Sprite2D
-		print(sprite.z_index)
 		if node.global_position.y > self.global_position.y:
 			sprite.z_index=2
 		else:
@@ -31,7 +30,7 @@ func _physics_process(delta):
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	
-	if not is_attacking:  # Only update movement if not attacking
+	if not is_attacking:  
 		update_animation_parameter(input_direction)
 		velocity = input_direction * SPEED * delta
 		move_and_slide()
@@ -42,7 +41,6 @@ func _physics_process(delta):
 func update_animation_parameter(move_input : Vector2): 
 
 	if(move_input != Vector2.ZERO):
-		print("move input",move_input)
 		animation_tree.set("parameters/Walk/blend_position", move_input)
 		animation_tree.set("parameters/Idle/blend_position", move_input)
 		animation_tree.set("parameters/Attack/blend_position", move_input)
