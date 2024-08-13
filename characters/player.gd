@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var starting_direction : Vector2 = Vector2(0, 1.1)
 @export var player_damage=60
 @onready var character_sprite = $Sprite2D  
+@onready var object_sprite = $Sprite2D  
 
 signal player_attack(damage)
 var is_attacking=false
@@ -19,11 +20,11 @@ func _physics_process(delta):
 	var nodes = get_tree().get_nodes_in_group("depth_sorted")
 	
 	for node in nodes:
-		var sprite=node.get_node("Sprite2D") as Sprite2D
+		#var sprite=node.get_node("Node2D") as Node2D
 		if node.global_position.y > self.global_position.y:
-			sprite.z_index=2
+			node.z_index=2
 		else:
-			sprite.z_index=0
+			node.z_index=0
 								
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
