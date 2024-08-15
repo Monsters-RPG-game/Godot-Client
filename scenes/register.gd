@@ -1,9 +1,9 @@
 extends Control
 
 @onready var http = $HTTPRequest
-
-var registered: bool = false
-var serverUrl = "https://test.api.kiszczyc.pl/users/register"
+@onready var ConfigLoader = load("res://shared/configLoader.gd").new()
+@onready var config = ConfigLoader.load_config()
+@onready var serverUrl = config.httpServer
 
 func _ready(): 
 	http.request_completed.connect(_on_request_completed)
@@ -13,23 +13,22 @@ func _on_request_completed(result, response_code, headers, body):
 	print(json)
 
 func _on_submit_pressed():
-	if !registered:
-		var loginPanel = $MarginContainer/VBoxContainer/Login
-		var emailPanel = $MarginContainer/VBoxContainer/Email
-		var passwordPanel = $MarginContainer/VBoxContainer/Password
-		var password2Panel = $MarginContainer/VBoxContainer/Password2
-		
-		var validation = _validate_credentials(loginPanel.text, emailPanel.text, passwordPanel.text, password2Panel.text)
-		if validation:
-			print(validation)
-			return
-		
-		_send(JSON.stringify({"login": loginPanel.text, "email": emailPanel.text, "password": passwordPanel.text}))
-		
-		loginPanel.text = ""
-		emailPanel.text = ""
-		passwordPanel.text = ""
-		password2Panel.text = ""
+	var loginPanel = $MarginContainer/VBoxContainer/Login
+	var emailPanel = $MarginContainer/VBoxContainer/Email
+	var passwordPanel = $MarginContainer/VBoxContainer/Password
+	var password2Panel = $MarginContainer/VBoxContainer/Password2
+	
+	var validation = _validate_credentials(loginPanel.text, emailPanel.text, passwordPanel.text, password2Panel.text)
+	if validation:
+		print(validation)
+		return
+	
+	_send(JSON.stringify({"login": loginPanel.text, "email": emailPanel.text, "password": passwordPanel.text}))
+	
+	loginPanel.text = ""
+	emailPanel.text = ""
+	passwordPanel.text = ""
+	password2Panel.text = ""
 
 func _validate_credentials(login: String, email: String, password: String, password2: String):
 	if login.length() < 3:
