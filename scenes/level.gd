@@ -1,25 +1,19 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
-@onready var enemySpawn = $Node2D/EnemySpawn
 @onready var enemy=preload("res://characters/enemy.tscn")
-
-func _ready():
-	var collison=enemySpawn.get_node("CollisionShape2D")
-	var rand_pos=generate_random_position(collison)
-	var enemy_instance=enemy.instantiate()
-	enemy_instance.position=rand_pos
-	
-	add_child(enemy_instance)
-
-func generate_random_position(coll_shape:CollisionShape2D)->Vector2:
-	var size=coll_shape.get_shape().get_rect()
-	var rand_x=randi_range(size.position.x,size.position.x+size.size.x)
-	var rand_y=randi_range(size.position.y,size.position.y+size.size.y)
-	
-	return coll_shape.global_position + Vector2(rand_x,rand_y)
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _ready():
+	spawn_enemy()
+	
+func spawn_enemy():
+	var area=$Map/Spawn as ReferenceRect
+	var rand_pos=area.position + Vector2(randf()*area.size.x,randf()*area.size.y)
+	var enemy_instance=enemy.instantiate()
+	enemy_instance.position=rand_pos
+	var map=$Map
+	map.add_child(enemy_instance)

@@ -13,19 +13,11 @@ var is_attacking=false
 const SPEED = 6000
 
 func _ready():
+	print('player',self.z_index)
 	update_animation_parameter(starting_direction)
 
 
 func _physics_process(delta): 
-	var nodes = get_tree().get_nodes_in_group("depth_sorted")
-	
-	for node in nodes:
-		#var sprite=node.get_node("Node2D") as Node2D
-		if node.global_position.y > self.global_position.y:
-			node.z_index=2
-		else:
-			node.z_index=0
-								
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
