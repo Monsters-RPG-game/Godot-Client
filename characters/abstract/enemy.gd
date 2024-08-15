@@ -10,7 +10,6 @@ const JUMP_VELOCITY = -400.0
 var is_dying=false
 
 func _ready():
-	print('enemy',self.z_index)
 	raycast.enabled = false
 	update_animation_parameter(starting_direction)
 	
@@ -41,7 +40,10 @@ func _physics_process(delta):
 		velocity=Vector2.ZERO
 	pick_new_state()
 
-func _on_player_attack(damage: int) -> void:
+func _on_player_attack(damage: int,area_id:int) -> void:
+	if area_id != $hurtbox.get_instance_id():
+		return
+		
 	print("Enemy hit by player with damage: ", damage)
 	if not is_dying and hp > damage:
 		anim_player.play("hurt")	

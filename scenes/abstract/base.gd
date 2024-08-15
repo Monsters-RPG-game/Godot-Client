@@ -3,6 +3,8 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 @onready var enemy=preload("res://characters/enemy.tscn")
 @onready var scene_controller = load("res://shared/scenes/manager.gd").new()
+@onready var enemy_controller = load("res://shared/enemies/enemy.gd").new()
+@export var enemies_number=1
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
@@ -12,13 +14,6 @@ func _ready():
 	spawn_enemy()
 	
 func spawn_enemy():
-	var area=$Map/Spawn as ReferenceRect
-	if !area:
-		print("No area selected to spawn enemies")
-		return
-	
-	var rand_pos=area.position + Vector2(randf()*area.size.x,randf()*area.size.y)
-	var enemy_instance=enemy.instantiate()
-	enemy_instance.position=rand_pos
-	var map=$Map
-	map.add_child(enemy_instance)
+	enemy_controller.initialize($Map/Spawn,$Map)
+	enemy_controller.allow_enemies("enemy")
+	enemy_controller.spawn(enemies_number)

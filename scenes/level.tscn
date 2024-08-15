@@ -82,15 +82,15 @@ texture = ExtResource("1_of7o0")
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.91681, 4.33103, 1.67938, 0.972272, 8, 0.795495, 8, 8, -5.92202, 8)
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 5.5, 8, 5.5, 8, 8, -4.5, 8, -4, 6.5)
 2:4/0 = 0
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(5.21491, 1.14905, -1.67938, 0.972272, -8, 0.795495, -8, 8, 8, 8, 8, 0.795495)
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 5.5, -8, 5.5, -8, 8, 8, 8, 8, 5.5)
 3:4/0 = 0
 3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_0/angular_velocity = 0.0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.91681, 4.33103, -1.67938, 0.972272, -8, 0.795495, -8, 8, 5.92202, 8)
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, 5.5, -8, 5.5, -8, 8, 5.5, 8, 2.5, 6)
 4:4/0 = 0
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
@@ -898,6 +898,7 @@ sources/4 = SubResource("TileSetAtlasSource_xkuob")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_j2osx")
+enemies_number = 10
 
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true

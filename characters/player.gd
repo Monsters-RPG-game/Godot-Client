@@ -1,9 +1,8 @@
 extends "res://characters/abstract/base_character.gd"
 
-signal player_attack(damage)
+signal player_attack(damage,area_id)
 
 func _ready():
-	print('player',self.z_index)
 	update_animation_parameter(starting_direction)
 
 func _physics_process(delta): 
@@ -25,7 +24,7 @@ func handle_attack():
 		is_attacking = true
 		attack_timer.start()
 
-func _on_sword_hit_area_entered(area):
+func _on_sword_hit_area_entered(area:Area2D):
 	if(area.name=='hurtbox'):
-		player_attack.emit(dmg)
-		print("HIT THI",area)
+		player_attack.emit(dmg,area.get_instance_id())
+		print("HIT THI",area.get_instance_id())
