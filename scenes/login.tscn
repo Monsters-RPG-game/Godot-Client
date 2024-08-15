@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b02u8db3cdoja"]
+
+[ext_resource type="Script" path="res://scenes/login.gd" id="1_7w6ai"]
+
+[node name="LoginPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7w6ai")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Logging you in"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

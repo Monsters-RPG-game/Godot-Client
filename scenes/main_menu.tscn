@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxqf2xrpjclqj"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_dt8im"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dt8im")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LogIn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Login"
+
+[node name="Register" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Register"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LogIn" to="." method="_on_log_in_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
