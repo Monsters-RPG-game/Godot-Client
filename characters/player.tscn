@@ -533,19 +533,18 @@ graph_offset = Vector2(13, 32)
 radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_8njau")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -16)
 texture = ExtResource("1_8uqld")
 hframes = 6
 vframes = 10
 
 [node name="SwordHit" type="Area2D" parent="Sprite2D"]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/SwordHit"]

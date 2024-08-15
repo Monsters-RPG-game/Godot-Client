@@ -4,8 +4,9 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @export var hp=100
 @export var min_distance_to_player=15
+@export var max_distance_to_player=200
 @export var starting_direction : Vector2 = Vector2(0, 1.1)
-@onready var player_node:Node2D = get_node("/root/Node2D/Player")  
+@onready var player_node:Node2D = get_node("/root/Level/Map/Player")  
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var anim_player = $AnimationPlayer  
 @onready var raycast = $RayCast2D as RayCast2D 
@@ -15,11 +16,10 @@ const JUMP_VELOCITY = -400.0
 var is_dying=false
 
 func _ready():
+	print('enemy',self.z_index)
 	raycast.enabled = false
 	update_animation_parameter(starting_direction)
-	# dodajemy do grupy wszystkie obiekty ktorych index player bedzie
-	# porownywal
-	self.add_to_group("depth_sorted")
+	
 	if player_node != null:
 		# laczymy sie z custom signalem
 		player_node.connect("player_attack", _on_player_attack)
@@ -32,10 +32,11 @@ func _process(_delta):
 		
 func _physics_process(delta):
 	var is_obstacle=check_for_obstacle(player_node)
+	print("OBST",is_obstacle)
 	var player_position=player_node.position
 	var target_position=(player_position-position).normalized()
 	update_animation_parameter(target_position)
-	if position.distance_to(player_position)>min_distance_to_player and position.distance_to(player_position)< 200:
+	if position.distance_to(player_position)>min_distance_to_player and position.distance_to(player_position)< max_distance_to_player:
 		var move_direction = target_position
 		# tu mozna dodac bardziej wyrafinowana logike omijania
 		if is_obstacle:
