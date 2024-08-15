@@ -19,3 +19,7 @@ func generate_random_position(coll_shape:CollisionShape2D)->Vector2:
 	var rand_y=randi_range(size.position.y,size.position.y+size.size.y)
 	
 	return coll_shape.global_position + Vector2(rand_x,rand_y)
+
+func _process(_delta):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
