@@ -1,0 +1,113 @@
+[gd_scene load_steps=16 format=3 uid="uid://3xf8plt3tag6"]
+
+[ext_resource type="Texture2D" uid="uid://barxwynvvndg1" path="res://assets/sprites/objects/chest_01.png" id="1_24yot"]
+[ext_resource type="Script" path="res://interactable_objects/chest.gd" id="1_ja5bo"]
+[ext_resource type="Script" path="res://interaction/interaction_area.gd" id="3_o057s"]
+[ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://ui/inventory/chest_inventory_ui.tscn" id="4_jjefs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cifb"]
+size = Vector2(8, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_56el3"]
+animation = &"closing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_awgo3"]
+animation = &"opening"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pxrxf"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ememf"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xkiuc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1toa3"]
+states/Closing/node = SubResource("AnimationNodeAnimation_56el3")
+states/Closing/position = Vector2(590, 105)
+states/End/position = Vector2(755, 105)
+states/Opening/node = SubResource("AnimationNodeAnimation_awgo3")
+states/Opening/position = Vector2(431, 104)
+states/Start/position = Vector2(279, 105)
+transitions = ["Opening", "Closing", SubResource("AnimationNodeStateMachineTransition_pxrxf"), "Start", "Opening", SubResource("AnimationNodeStateMachineTransition_ememf"), "Closing", "End", SubResource("AnimationNodeStateMachineTransition_xkiuc")]
+
+[sub_resource type="Animation" id="Animation_q803a"]
+resource_name = "close"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_tuo23"]
+resource_name = "open"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe0rh"]
+_data = {
+"closing": SubResource("Animation_q803a"),
+"opening": SubResource("Animation_tuo23")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1nnn"]
+radius = 15.0
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_ja5bo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_1cifb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 14)
+texture = ExtResource("1_24yot")
+hframes = 4
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1toa3")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qe0rh")
+}
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(0, 14)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_o057s")
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_v1nnn")
+
+[node name="ChestInventoryUI" parent="." instance=ExtResource("4_jjefs")]
+offset_top = 32.0
+offset_bottom = 65.0
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
