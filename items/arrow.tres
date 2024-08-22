@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dmr0u4fogrjmq"]
-
-[ext_resource type="Script" path="res://inventory/scripts/invetory_item.gd" id="1_32w6w"]
-[ext_resource type="Texture2D" uid="uid://d0bfa643uovse" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_wmbeb"]
-
-[resource]
-script = ExtResource("1_32w6w")
-name = "Arrow"
-texture = ExtResource("2_wmbeb")
