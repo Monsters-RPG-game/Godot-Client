@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://k8jllp47sxff"]
+
+[ext_resource type="Script" path="res://ui/inventory/inventory_slot.gd" id="1_kgtdk"]
+[ext_resource type="Texture2D" uid="uid://dym7bnksnnocv" path="res://assets/Retro Inventory/Original/Inventory_Slot_1.png" id="1_ryn71"]
+
+[node name="InventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+y_sort_enabled = true
+custom_minimum_size = Vector2(4, 4)
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 3.0
+offset_bottom = 3.0
+script = ExtResource("1_kgtdk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(0.34375, 0.34375)
+texture = ExtResource("1_ryn71")
+
+[node name="ItemDisplay" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(2, 2)

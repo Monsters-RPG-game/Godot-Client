@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Chest
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var animation_tree: AnimationTree = $AnimationTree

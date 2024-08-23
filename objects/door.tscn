@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv644xm68y42s"]
+[gd_scene load_steps=6 format=3 uid="uid://bdcr0g20lue0q"]
 
-[ext_resource type="Script" path="res://interactable_objects/door.gd" id="1_l1t12"]
+[ext_resource type="Script" path="res://objects/door.gd" id="1_y0b7a"]
 [ext_resource type="Texture2D" uid="uid://2yy8wh53xio8" path="res://assets/sprites/tilesets/walls/wooden_door.png" id="2_ggqua"]
-[ext_resource type="Script" path="res://interaction/interaction_area.gd" id="3_k8gl5"]
+[ext_resource type="Script" path="res://interactions/interaction_area.gd" id="3_k8gl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm7lx"]
 size = Vector2(14, 5.5)
@@ -11,7 +11,7 @@ size = Vector2(14, 5.5)
 radius = 14.0357
 
 [node name="Door" type="StaticBody2D"]
-script = ExtResource("1_l1t12")
+script = ExtResource("1_y0b7a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 14)

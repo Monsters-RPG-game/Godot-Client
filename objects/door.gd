@@ -1,4 +1,5 @@
-extends StaticBody2D
+extends Node2D
+class_name Door
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite = $Sprite2D
