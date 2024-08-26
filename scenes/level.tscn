@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://budekmdgk1vei" path="res://assets/sprites/tilesets/decor_16x16.png" id="5_1ghcj"]
 [ext_resource type="PackedScene" uid="uid://drh5r8mlu6fyy" path="res://characters/player.tscn" id="6_truw1"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="9_lwlyc"]
+[ext_resource type="Resource" uid="uid://cssr3duuoiwus" path="res://inventories/chest_inventory/chest2_inventory.tres" id="9_osn7v"]
 [ext_resource type="PackedScene" uid="uid://bdcr0g20lue0q" path="res://objects/door.tscn" id="10_j2frs"]
-[ext_resource type="Resource" uid="uid://b373lnt1u3su3" path="res://inventories/chest_inventory/chest1_inventory.tres" id="10_qlpan"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("1_of7o0")
@@ -931,7 +931,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Chest" parent="Map" instance=ExtResource("9_lwlyc")]
 z_index = 1
 position = Vector2(7, -17)
-inventory = ExtResource("10_qlpan")
+inventory = ExtResource("9_osn7v")
 
 [node name="Camera2D" type="Camera2D" parent="Map"]
 zoom = Vector2(2, 2)
