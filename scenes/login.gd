@@ -27,40 +27,47 @@ func _process(_delta):
 		var req = connection.get_string(connection.get_available_bytes())
 		if req:
 			set_process(false)
-			print("got req")
-			print(code_verifier)
-			var auth_code = req.split("&scope")[0].split("=")[1]
+			var auth_code = req.split("&iss")[0].split("code=")[1]
 			get_code(auth_code)
 			
-func _on_request_completed(result, response_code, headers, body):
+func _on_request_completed(result, _response_code, _headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(json)
+	ServerConnection.log_in(json)
 
 func get_auth_code():
 	set_process(true)
 	
 	var redir_err = redirect_server.listen(3005, "127.0.0.1")
-	print("Code veririer ?")
+	if(redir_err):
+		print("Got err while creating server: ", redir_err)
+		return
 	code_verifier = generate_code_verifier()
 	var challenge = generate_code_challenge_from_verifier(code_verifier)
-	
+
 	var body_parts = [
 		"client_id=" + client_id,
 		"response_type=code",
 		"redirect_uri=" + redirect_url,
-		"nonce=" + generate_randomName(),
+		"nonce=" + generate_randomName(30),
 		"scope=openid",
 		"code_challenge_method=S256",
 		"code_challenge=" + challenge 
 	]
 	
 	var url = auth_server + "?" + '&'.join(body_parts)
-	
 	OS.shell_open(url)
 
-func generate_randomName():
-	return "aasdsadsadsadsadsa"
-	
+func generate_randomName(amount: int):
+	var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	var random_string = ""
+	var char_count = characters.length()
+
+	for i in range(amount):
+		var random_index = randi() % char_count
+		random_string += characters[random_index]
+
+	return random_string
+
 func generate_code_challenge_from_verifier(val: String) -> String:
 	var hashed = sha256(val.to_utf8_buffer())
 	return base64_url_encode(hashed)
@@ -76,16 +83,16 @@ func base64_url_encode(data: PackedByteArray) -> String:
 	base64_string = base64_string.replace("+", "-")
 	base64_string = base64_string.replace("/", "_")
 	return base64_string.replace("=", "")
-	
+
 func generate_code_verifier() -> String:
 	var array = []
 	for i in range(28):
 		array.append(randi() % 0xFFFFFFFF)
-
+	
 	var verifier = ""
 	for value in array:
 		verifier += dec2hex(value)
-
+	
 	return verifier.substr(0, 128)
 
 func dec2hex(dec: int) -> String:
