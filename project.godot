@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://interactions/interaction_manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameState="*res://shared/game/game_state.gd"
+
+[dialogue_manager]
+
+general/states=["GameState"]
 
 [editor_plugins]
 

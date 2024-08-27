@@ -911,7 +911,6 @@ z_index = 1
 position = Vector2(-39, 1)
 
 [node name="ConversatiableSlime" parent="Map" instance=ExtResource("2_wt7o5")]
-z_index = 1
 position = Vector2(28, -45)
 
 [node name="TileMap" type="TileMap" parent="Map"]

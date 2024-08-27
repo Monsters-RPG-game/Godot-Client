@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fmym6jc0jl5b"]
+[gd_scene load_steps=15 format=3 uid="uid://fmym6jc0jl5b"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_j2osx"]
 [ext_resource type="Texture2D" uid="uid://tfcu4wijiwq4" path="res://assets/sprites/tilesets/plains.png" id="1_of7o0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjt5wevc3tgbd" path="res://assets/sprites/tilesets/decor_8x8.png" id="4_agukr"]
 [ext_resource type="Texture2D" uid="uid://budekmdgk1vei" path="res://assets/sprites/tilesets/decor_16x16.png" id="5_1ghcj"]
 [ext_resource type="PackedScene" uid="uid://drh5r8mlu6fyy" path="res://characters/player.tscn" id="6_truw1"]
+[ext_resource type="PackedScene" uid="uid://dho2pc1tv0qed" path="res://characters/conversatiable_slime.tscn" id="8_yo3nd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("1_of7o0")
@@ -928,3 +929,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="Map"]
 zoom = Vector2(2, 2)
 metadata/_edit_lock_ = true
+
+[node name="ConversatiableSlime" parent="Map" instance=ExtResource("8_yo3nd")]
+position = Vector2(95, -84)

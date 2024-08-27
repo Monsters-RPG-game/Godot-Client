@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/conversatiable_slime.gd" id="1_hymjj"]
 [ext_resource type="Texture2D" uid="uid://c0q7qdx2yq13c" path="res://assets/sprites/characters/slime.png" id="1_u5pch"]
-[ext_resource type="Resource" uid="uid://ybbndpj3ahg1" path="res://dialogues/main.dialogue" id="2_g07wr"]
+[ext_resource type="Resource" uid="uid://bax3kikemxpxe" path="res://dialogues/main.dialogue" id="2_g07wr"]
 [ext_resource type="Script" path="res://interactions/interaction_area.gd" id="2_hkymg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpbmd"]
@@ -45,6 +45,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 radius = 23.1948
 
 [node name="ConversatiableSlime" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_hymjj")
 dialogue = ExtResource("2_g07wr")
 
@@ -58,6 +59,7 @@ scale = Vector2(1.04009, 0.778822)
 texture = ExtResource("1_u5pch")
 hframes = 7
 vframes = 13
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
