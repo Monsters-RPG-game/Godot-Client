@@ -3,4 +3,3 @@ extends "res://characters/abstract/enemy.gd"
 func _init():
 	SPEED = 2000.0
 	hp=100
-
