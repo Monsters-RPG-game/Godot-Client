@@ -11,6 +11,7 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _ready():
+	GameState.in_dialog = false
 	spawn_enemy()
 	
 func spawn_enemy():
