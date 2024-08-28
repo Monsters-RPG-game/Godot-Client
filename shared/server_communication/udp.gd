@@ -2,8 +2,8 @@ extends Node
 
 var Config_loader = load("res://shared/configLoader.gd").new()
 var config = Config_loader.load_config()
-var server_url = config.udpServer
-var server_port = config.udpServerPort
+#var server_url = config.udpServer
+#var server_port = config.udpServerPort
 
 var to_sand: Array[PackedByteArray] = []
 var udp_client: PacketPeerUDP
@@ -11,8 +11,8 @@ var is_ready: bool = false
 
 func init_connection():
 	udp_client = PacketPeerUDP.new()
-	var callback = udp_client.connect_to_host(server_url, server_port)
-	print('Connection callback ', callback)
+	#var callback = udp_client.connect_to_host(server_url, server_port)
+	#print('Connection callback ', callback)
 	is_ready = true
 	print("connected to server")
 	set_process(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=19 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="2_54ptd"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://budekmdgk1vei" path="res://assets/sprites/tilesets/decor_16x16.png" id="6_pm64b"]
 [ext_resource type="PackedScene" uid="uid://drh5r8mlu6fyy" path="res://characters/player.tscn" id="7_aa6jo"]
 [ext_resource type="PackedScene" uid="uid://bdcr0g20lue0q" path="res://objects/door.tscn" id="10_fds2y"]
+[ext_resource type="PackedScene" uid="uid://dkf7vxmjbxeh5" path="res://characters/npc.tscn" id="11_ppcel"]
+[ext_resource type="PackedScene" uid="uid://drvds4tr77rt2" path="res://characters/enemy.tscn" id="12_co3lm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("2_g247p")
@@ -906,6 +908,9 @@ enemies_number = 10
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Enemy" parent="Map" instance=ExtResource("12_co3lm")]
+position = Vector2(-15, -64)
+
 [node name="Chest" parent="Map" instance=ExtResource("2_54ptd")]
 z_index = 1
 position = Vector2(-39, 1)
@@ -934,3 +939,6 @@ metadata/_edit_lock_ = true
 [node name="Door" parent="Map" instance=ExtResource("10_fds2y")]
 z_index = 1
 position = Vector2(15, 7)
+
+[node name="NPC" parent="Map" instance=ExtResource("11_ppcel")]
+position = Vector2(-31, -62)
