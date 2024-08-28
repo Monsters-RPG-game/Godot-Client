@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://characters/conversatiable_slime.gd" id="1_hymjj"]
 [ext_resource type="Texture2D" uid="uid://c0q7qdx2yq13c" path="res://assets/sprites/characters/slime.png" id="1_u5pch"]
-[ext_resource type="Resource" uid="uid://bax3kikemxpxe" path="res://dialogues/main.dialogue" id="2_g07wr"]
-[ext_resource type="Script" path="res://interactions/interaction_area.gd" id="2_hkymg"]
+[ext_resource type="Resource" uid="uid://bax3kikemxpxe" path="res://game_componenets/dialogues/main.dialogue" id="2_g07wr"]
+[ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="2_hkymg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpbmd"]
 radius = 5.38516
