@@ -12,9 +12,7 @@ var is_ready: bool = false
 func init_connection():
 	udp_client = PacketPeerUDP.new()
 	var callback = udp_client.connect_to_host(server_url, server_port)
-	print('Connection callback ', callback)
 	is_ready = true
-	print("connected to server")
 	set_process(true)
 	_start_queue()
 
@@ -37,4 +35,3 @@ func _process(delta):
 func _start_queue():
 	for message in to_sand:
 		udp_client.put_packet(message)
-	
