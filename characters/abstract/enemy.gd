@@ -33,6 +33,7 @@ func _physics_process(delta):
 		var move_direction = target_position
 		# tu mozna dodac bardziej wyrafinowana logike omijania
 		if is_obstacle:
+			print('enemy obstacle')
 			move_direction =move_direction.rotated(PI/4) 
 		velocity = move_direction * SPEED * delta
 		move_and_slide()

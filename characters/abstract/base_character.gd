@@ -30,5 +30,4 @@ func pick_new_state():
 		state_machine.travel("Idle")
 
 func _on_attack_timer_timeout():
-	print('time out')
 	is_attacking=false
