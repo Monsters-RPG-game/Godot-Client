@@ -663,7 +663,8 @@ shape = SubResource("RectangleShape2D_cwrfe")
 disabled = true
 
 [node name="AttackDetection" type="Area2D" parent="Sprite2D"]
-collision_mask = 5
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackDetection"]
 position = Vector2(11.25, 11.5)
@@ -699,15 +700,17 @@ action_name = "talk"
 shape = SubResource("CircleShape2D_d6m2b")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("5_2riuu")
 
 [node name="DetectionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_wpwhh")
 
 [connection signal="area_entered" from="Sprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
-[connection signal="area_entered" from="Sprite2D/AttackDetection" to="." method="_on_attack_detection_area_entered"]
+[connection signal="body_entered" from="Sprite2D/AttackDetection" to="." method="_on_attack_detection"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
-[connection signal="area_entered" from="DetectionArea" to="DetectionArea" method="_on_area_entered"]
-[connection signal="area_exited" from="DetectionArea" to="DetectionArea" method="_on_area_exited"]
+[connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="DetectionArea" method="_on_body_exited"]
