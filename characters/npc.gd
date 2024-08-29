@@ -10,7 +10,6 @@ func _ready():
 
 func _physics_process(_delta):
 		pick_new_state()
-		print(is_attacking)
 
 func _on_interact():
 	if (!GameState.in_dialog):
@@ -24,6 +23,5 @@ func _on_sword_hit_area_entered(area:Area2D):
 		print("HIT THI",area.get_instance_id())
 	
 func _on_attack_detection_area_entered(_area):
-	print('area enterd')
 	is_attacking = true
 	attack_timer.start()

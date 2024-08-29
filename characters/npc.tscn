@@ -1,9 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://dkf7vxmjbxeh5"]
+[gd_scene load_steps=46 format=3 uid="uid://dkf7vxmjbxeh5"]
 
 [ext_resource type="Texture2D" uid="uid://dnufa52b01qjl" path="res://assets/sprites/characters/player.png" id="1_cua6x"]
 [ext_resource type="Script" path="res://characters/npc.gd" id="1_fxjmm"]
 [ext_resource type="Resource" uid="uid://dtcsl1iogyseo" path="res://game_componenets/dialogues/npc_prototype.dialogue" id="2_asamo"]
 [ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="4_2ldsy"]
+[ext_resource type="Script" path="res://game_componenets/detections/detection_area.gd" id="5_2riuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwrfe"]
 size = Vector2(22, 11)
@@ -636,6 +637,9 @@ radius = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6m2b"]
 radius = 17.2627
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpwhh"]
+radius = 79.9062
+
 [node name="NPC" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -691,11 +695,19 @@ collision_mask = 2
 script = ExtResource("4_2ldsy")
 action_name = "talk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="InteractionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_d6m2b")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+script = ExtResource("5_2riuu")
+
+[node name="DetectionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_wpwhh")
 
 [connection signal="area_entered" from="Sprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="area_entered" from="Sprite2D/AttackDetection" to="." method="_on_attack_detection_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
+[connection signal="area_entered" from="DetectionArea" to="DetectionArea" method="_on_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="DetectionArea" method="_on_area_exited"]
