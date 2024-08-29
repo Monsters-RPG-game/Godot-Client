@@ -19,7 +19,7 @@ func behavior(delta):
 	if (detection_area.detected_array.size() > 0):
 		var target = detection_area.detected_array[0]
 		var target_position=(target.position - position).normalized()
-		var move_direction = find_path(target, target_position)
+		var move_direction = find_path(target_position)
 		update_animation_parameter(target_position)
 		if ((target.position - position).length() <= 15):
 			attack()
@@ -30,7 +30,7 @@ func behavior(delta):
 		velocity = Vector2.ZERO
 
 
-func find_path(target: CharacterBody2D, target_position: Vector2) -> Vector2:
+func find_path(target_position: Vector2) -> Vector2:
 	raycast.target_position = target_position
 	raycast.enabled = true
 	var move_direction = target_position

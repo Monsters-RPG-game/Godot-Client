@@ -264,6 +264,7 @@ position = Vector2(0, -8)
 texture = ExtResource("1_nncxs")
 hframes = 8
 vframes = 8
+frame = 5
 
 [node name="hurtbox" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
