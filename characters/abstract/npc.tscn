@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://dkf7vxmjbxeh5"]
 
 [ext_resource type="Texture2D" uid="uid://dnufa52b01qjl" path="res://assets/sprites/characters/player.png" id="1_cua6x"]
-[ext_resource type="Script" path="res://characters/npc.gd" id="1_fxjmm"]
+[ext_resource type="Script" path="res://characters/abstract/npc.gd" id="1_fxjmm"]
 [ext_resource type="Resource" uid="uid://dtcsl1iogyseo" path="res://game_componenets/dialogues/npc_prototype.dialogue" id="2_asamo"]
 [ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="4_2ldsy"]
 [ext_resource type="Script" path="res://game_componenets/detections/detection_area.gd" id="5_2riuu"]
@@ -581,6 +581,12 @@ parameters/Walk/blend_position = Vector2(-0.248, 0.261905)
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_473lk")
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.3
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
@@ -599,6 +605,7 @@ script = ExtResource("5_2riuu")
 shape = SubResource("CircleShape2D_wpwhh")
 
 [connection signal="area_entered" from="Sprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="_on_body_entered"]
