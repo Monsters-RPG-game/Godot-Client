@@ -264,7 +264,7 @@ position = Vector2(0, -8)
 texture = ExtResource("1_nncxs")
 hframes = 8
 vframes = 8
-frame = 3
+frame = 4
 
 [node name="hurtbox" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
@@ -290,5 +290,5 @@ parameters/Walk/blend_position = Vector2(-0.828947, 0.56455)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
-rotation = 1.5708
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_5sxkn")

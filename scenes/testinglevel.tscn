@@ -909,7 +909,7 @@ enemies_number = 10
 y_sort_enabled = true
 
 [node name="Enemy" parent="Map" instance=ExtResource("12_co3lm")]
-position = Vector2(263, 124)
+position = Vector2(169, 73)
 
 [node name="Chest" parent="Map" instance=ExtResource("2_54ptd")]
 z_index = 1
@@ -941,4 +941,4 @@ z_index = 1
 position = Vector2(15, 7)
 
 [node name="NPC" parent="Map" instance=ExtResource("11_ppcel")]
-position = Vector2(169, 84)
+position = Vector2(182, 21)
