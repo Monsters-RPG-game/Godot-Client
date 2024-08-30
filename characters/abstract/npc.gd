@@ -19,18 +19,23 @@ func _physics_process(delta):
 
 func behavior(delta):
 	if (detection_area.detected_array.size() > 0):
+		#attacks if an enemy was detected
 		var target = detection_area.detected_array[0]
 		var move_direction = find_path(target.position)
 		if ((target.position - position).length() <= 15):
+		#performs attack if enemy is close
 			attack()
 		elif not is_attacking:
+		#if not perfoming attack, moves to an enemy
 			velocity = move_direction * SPEED * delta
 			move_and_slide()
 	elif (starting_position - position).length() > 1 and not is_attacking:
+		#if not at starting position and not following enemy returns to starting position
 		var move_direction = find_path(starting_position)
 		velocity = move_direction * SPEED * delta
 		move_and_slide()
 	else: 
+		#stays still if all above are falls
 		velocity = Vector2.ZERO
 
 
