@@ -1,7 +1,5 @@
 extends Node
 
-@onready var udp_communication = load("res://shared/server_communication/udp.gd").new()
-
 var connected: bool = false
 
 func _ready() -> void:
@@ -9,8 +7,7 @@ func _ready() -> void:
 
 func _init_connection() -> void:
 	var tokens = _read_tokens()
-	udp_communication.init_connection()
-	udp_communication.send_message("Test")
+	UdpConnection.init_connection()
 
 func _read_tokens() -> Dictionary:
 	var file = FileAccess.open("user://user_settings.json", FileAccess.READ)

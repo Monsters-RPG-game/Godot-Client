@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
-@onready var attack_timer = $AttackTimer  
+@onready var attack_timer = $AttackTimer
 @onready var character_sprite = $Sprite2D  
 @onready var object_sprite = $Sprite2D
 @onready var state_machine = animation_tree.get("parameters/playback")
