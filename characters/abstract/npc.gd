@@ -3,11 +3,13 @@ extends "res://characters/abstract/base_character.gd"
 @onready var detection_area: DetectionArea = $DetectionArea
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var raycast: RayCast2D = $RayCast2D
+@onready var starting_position: Vector2 = position
 @export var dialogue: DialogueResource
 
 signal npc_attack(damage, area_id)
 
 func _ready():
+	print(starting_position)
 	raycast.enabled = false
 	interaction_area.interact = Callable(self, "_on_interact")
 
@@ -18,25 +20,29 @@ func _physics_process(delta):
 func behavior(delta):
 	if (detection_area.detected_array.size() > 0):
 		var target = detection_area.detected_array[0]
-		var target_position=(target.position - position).normalized()
-		var move_direction = find_path(target_position)
-		update_animation_parameter(target_position)
+		var move_direction = find_path(target.position)
 		if ((target.position - position).length() <= 15):
 			attack()
 		elif not is_attacking:
 			velocity = move_direction * SPEED * delta
 			move_and_slide()
+	elif (starting_position - position).length() > 1 and not is_attacking:
+		var move_direction = find_path(starting_position)
+		velocity = move_direction * SPEED * delta
+		move_and_slide()
 	else: 
 		velocity = Vector2.ZERO
 
 
-func find_path(target_position: Vector2) -> Vector2:
+func find_path(target) -> Vector2:
+	var target_position=(target - position).normalized()
 	raycast.target_position = target_position
 	raycast.enabled = true
 	var move_direction = target_position
 	if (raycast.is_colliding()):
 		print('obstacle')
 		move_direction = move_direction.rotated(PI/4)
+	update_animation_parameter(target_position)
 	return move_direction
 
 func attack():
