@@ -1,15 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=18 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="2_54ptd"]
 [ext_resource type="Texture2D" uid="uid://tfcu4wijiwq4" path="res://assets/sprites/tilesets/plains.png" id="2_g247p"]
-[ext_resource type="PackedScene" uid="uid://dho2pc1tv0qed" path="res://characters/conversatiable_slime.tscn" id="2_wt7o5"]
 [ext_resource type="Texture2D" uid="uid://cphbc1rxl4gft" path="res://assets/sprites/tilesets/grass.png" id="3_yevpe"]
 [ext_resource type="Texture2D" uid="uid://b15jnx53ad8o5" path="res://assets/sprites/objects/objects.png" id="4_yfj3o"]
 [ext_resource type="Texture2D" uid="uid://cjt5wevc3tgbd" path="res://assets/sprites/tilesets/decor_8x8.png" id="5_2xheo"]
 [ext_resource type="Texture2D" uid="uid://budekmdgk1vei" path="res://assets/sprites/tilesets/decor_16x16.png" id="6_pm64b"]
 [ext_resource type="PackedScene" uid="uid://drh5r8mlu6fyy" path="res://characters/player.tscn" id="7_aa6jo"]
 [ext_resource type="PackedScene" uid="uid://bdcr0g20lue0q" path="res://objects/door.tscn" id="10_fds2y"]
+[ext_resource type="PackedScene" uid="uid://dkf7vxmjbxeh5" path="res://characters/abstract/npc.tscn" id="11_ppcel"]
+[ext_resource type="PackedScene" uid="uid://drvds4tr77rt2" path="res://characters/enemy.tscn" id="12_co3lm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("2_g247p")
@@ -906,12 +907,12 @@ enemies_number = 10
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Enemy" parent="Map" instance=ExtResource("12_co3lm")]
+position = Vector2(132, 104)
+
 [node name="Chest" parent="Map" instance=ExtResource("2_54ptd")]
 z_index = 1
 position = Vector2(-39, 1)
-
-[node name="ConversatiableSlime" parent="Map" instance=ExtResource("2_wt7o5")]
-position = Vector2(28, -45)
 
 [node name="TileMap" type="TileMap" parent="Map"]
 y_sort_enabled = true
@@ -925,7 +926,7 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(-393216, 65536, 4, -327680, 65536, 5, -262144, 65536, 6, -393215, 131072, 4, -262143, 131072, 6, -393214, 196608, 4, -327678, 196608, 5, -262142, 196608, 6, -131074, 0, 7, 5, 2, 1, -524305, 131072, 6, -524304, 131072, 6, -524303, 131072, 6, -524302, 327680, 4, -458766, 65536, 5, -589841, 131072, 5, -589840, 131072, 5, -589839, 131072, 5, -589838, 131072, 5, -589837, 131072, 5, -524301, 262144, 4, -524300, 327680, 4, -458764, 327680, 5, -458763, 131072, 5, -458762, 131072, 5, -524298, 131072, 5, -524297, 262144, 4, -524296, 131072, 6, -589832, 131072, 5, -393229, 131072, 6, -393227, 131072, 6, -393228, 131072, 6, -393226, 131072, 6, -393225, 196608, 6, -458761, 196608, 5, -393230, 65536, 6, -458765, 262144, 5, -524295, 131072, 6, -589830, 262144, 4, -524294, 196608, 6, -589831, 131072, 5, -589833, 131072, 5, -589834, 131072, 5, -589835, 131072, 5, -589836, 131072, 5, -524299, 131072, 5, -589829, 131072, 6, -589828, 196608, 6, -655364, 196608, 5, -720900, 262144, 4, -720899, 196608, 6, -720913, 131072, 5, -655377, 131072, 5, -720912, 131072, 5, -655376, 131072, 5, -720911, 131072, 5, -655375, 131072, 5, -720910, 131072, 5, -655374, 131072, 5, -720909, 131072, 5, -655373, 131072, 5, -720908, 131072, 5, -655372, 131072, 5, -720907, 131072, 5, -655371, 131072, 5, -720906, 131072, 5, -655370, 131072, 5, -720905, 131072, 5, -655369, 131072, 5, -720904, 131072, 5, -655368, 131072, 5, -720903, 131072, 5, -655367, 131072, 5, -720902, 131072, 5, -655366, 131072, 5, -720901, 131072, 5, -655365, 131072, 5, -393223, 2, 1, -458767, 2, 1, -65541, 4, 4, -196602, 4, 4, -720890, 2, 0, 2, 655362, 7, 65531, 2, 5, -327679, 131072, 5, 131071, 393218, 7, -262149, 524290, 6)
 
 [node name="Player" parent="Map" groups=["player"] instance=ExtResource("7_aa6jo")]
-position = Vector2(-28, -13)
+position = Vector2(200, 70)
 
 [node name="Camera2D" type="Camera2D" parent="Map"]
 zoom = Vector2(2, 2)
@@ -934,3 +935,6 @@ metadata/_edit_lock_ = true
 [node name="Door" parent="Map" instance=ExtResource("10_fds2y")]
 z_index = 1
 position = Vector2(15, 7)
+
+[node name="NPC" parent="Map" instance=ExtResource("11_ppcel")]
+position = Vector2(182, 21)

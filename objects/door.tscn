@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/door.gd" id="1_y0b7a"]
 [ext_resource type="Texture2D" uid="uid://2yy8wh53xio8" path="res://assets/sprites/tilesets/walls/wooden_door.png" id="2_ggqua"]
-[ext_resource type="Script" path="res://interactions/interaction_area.gd" id="3_k8gl5"]
+[ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="3_k8gl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm7lx"]
 size = Vector2(14, 5.5)

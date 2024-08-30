@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://barxwynvvndg1" path="res://assets/sprites/objects/chest_01.png" id="1_24yot"]
 [ext_resource type="Script" path="res://objects/chest.gd" id="1_ja5bo"]
-[ext_resource type="Resource" uid="uid://b373lnt1u3su3" path="res://inventories/chest_inventory/chest1_inventory.tres" id="2_nw0jw"]
-[ext_resource type="Script" path="res://interactions/interaction_area.gd" id="3_o057s"]
+[ext_resource type="Resource" uid="uid://d1yxyaab827c6" path="res://game_componenets/inventories/chest_inventory/chest1_inventory.tres" id="2_5htru"]
+[ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="4_0gb0y"]
 [ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://ui/inventory/chest_inventory_ui.tscn" id="4_jjefs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cifb"]
@@ -77,7 +77,7 @@ radius = 15.0
 
 [node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_ja5bo")
-inventory = ExtResource("2_nw0jw")
+inventory = ExtResource("2_5htru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17.5)
@@ -101,7 +101,7 @@ libraries = {
 position = Vector2(0, 14)
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("3_o057s")
+script = ExtResource("4_0gb0y")
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
