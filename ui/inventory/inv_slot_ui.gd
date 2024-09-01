@@ -10,7 +10,6 @@ func update(slot: InvSlot):
 	else:
 		item_display.visible = true
 		item_display.texture = slot.item.texture 
-		item_display.scale = Vector2(0.3, 0.3)
 		if slot.amount == 1 or !slot.item.stackable:
 			amount_label.visible = false
 		else:

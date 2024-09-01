@@ -4,7 +4,7 @@ class_name CollecteableItem
 @onready var player: BaseCharacter = get_tree().get_first_node_in_group("player")
 @onready var interaction_area: InteractionArea = $InteractionArea
 @export var item: InvItem
-@export var amount: int
+@export var amount: = 1
 
 func _ready():
 	$Sprite2D.texture = item.texture
