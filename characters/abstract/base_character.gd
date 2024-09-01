@@ -1,10 +1,12 @@
 extends CharacterBody2D
+class_name BaseCharacter
 
 @onready var animation_tree = $AnimationTree
 @onready var attack_timer = $AttackTimer  
 @onready var character_sprite = $Sprite2D  
 @onready var object_sprite = $Sprite2D
 @onready var state_machine = animation_tree.get("parameters/playback")
+@export var inv: Inv
 @export var dmg=60
 @export var hp=100
 @export var SPEED = 6000

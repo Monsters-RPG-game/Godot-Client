@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=20 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="2_54ptd"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://drh5r8mlu6fyy" path="res://characters/player.tscn" id="7_aa6jo"]
 [ext_resource type="PackedScene" uid="uid://bdcr0g20lue0q" path="res://objects/door.tscn" id="10_fds2y"]
 [ext_resource type="PackedScene" uid="uid://ckm5ada573r1h" path="res://characters/abstract/npc.tscn" id="11_ppcel"]
+[ext_resource type="PackedScene" uid="uid://xodwafyxdal1" path="res://objects/collactable_item.tscn" id="12_40li2"]
 [ext_resource type="PackedScene" uid="uid://drvds4tr77rt2" path="res://characters/enemy.tscn" id="12_co3lm"]
+[ext_resource type="Resource" uid="uid://dmr0u4fogrjmq" path="res://game_componenets/inventory/items/arrow.tres" id="13_giodu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("2_g247p")
@@ -936,3 +938,14 @@ position = Vector2(15, 7)
 position = Vector2(182, 21)
 
 [node name="Chest" parent="Map" instance=ExtResource("2_54ptd")]
+position = Vector2(-29, -13)
+
+[node name="CollectableItem" parent="Map" instance=ExtResource("12_40li2")]
+position = Vector2(50, 48)
+amount = 1
+item = ExtResource("13_giodu")
+
+[node name="CollectableItem2" parent="Map" instance=ExtResource("12_40li2")]
+position = Vector2(19, 47)
+amount = 1
+item = ExtResource("13_giodu")

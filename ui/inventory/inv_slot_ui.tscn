@@ -7,21 +7,21 @@
 self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
 custom_minimum_size = Vector2(4, 4)
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_right = 10.0
+offset_bottom = 10.0
+scale = Vector2(1.2969, 1.3418)
 script = ExtResource("1_861s7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4, 4)
-scale = Vector2(0.34375, 0.34375)
+scale = Vector2(0.37, 0.37)
 texture = ExtResource("2_wnojh")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_right = 8.0
 offset_bottom = 8.0
+scale = Vector2(0.765868, 0.741604)
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
@@ -33,11 +33,11 @@ scale = Vector2(2, 2)
 z_index = 1
 custom_minimum_size = Vector2(23, 23)
 layout_mode = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 7.0
-offset_bottom = 7.0
-scale = Vector2(0.13, 0.13)
+offset_left = 2.04076
+offset_top = 2.02965
+offset_right = 25.0408
+offset_bottom = 25.0296
+scale = Vector2(0.15, 0.15)
 text = "99
 "
 horizontal_alignment = 2

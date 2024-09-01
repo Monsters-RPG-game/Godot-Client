@@ -1,4 +1,4 @@
-extends "res://characters/abstract/base_character.gd"
+extends BaseCharacter 
 
 @export var min_distance_to_player=15
 @export var max_distance_to_player=200

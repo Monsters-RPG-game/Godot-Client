@@ -109,8 +109,10 @@ action_name = "open"
 shape = SubResource("CircleShape2D_v1nnn")
 
 [node name="ChestInventoryUI" parent="." instance=ExtResource("5_ik4io")]
-offset_top = 32.0
-offset_bottom = 65.0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 80.0
+offset_bottom = 58.0
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

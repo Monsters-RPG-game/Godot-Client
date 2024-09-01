@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://drh5r8mlu6fyy"]
+[gd_scene load_steps=41 format=3 uid="uid://drh5r8mlu6fyy"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_8njau"]
 [ext_resource type="Texture2D" uid="uid://dnufa52b01qjl" path="res://assets/sprites/characters/player.png" id="1_8uqld"]
+[ext_resource type="Resource" uid="uid://sw245yp5aatt" path="res://game_componenets/inventory/characters_inv/player_inv.tres" id="2_l0dwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwrfe"]
 size = Vector2(22, 11)
@@ -537,6 +538,7 @@ z_index = 1
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_8njau")
+inv = ExtResource("2_l0dwk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)

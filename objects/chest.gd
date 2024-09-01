@@ -23,6 +23,3 @@ func _on_interact():
 		is_open = false
 		ui.is_open = false
 		state_machine.travel("Closing")
-		
-func put_item_in(item):
-	inv.insert(item)

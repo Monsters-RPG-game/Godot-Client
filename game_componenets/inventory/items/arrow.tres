@@ -7,4 +7,4 @@
 script = ExtResource("1_esirh")
 name = "Arrow"
 texture = ExtResource("2_hml5t")
-collactable = true
+stackable = true

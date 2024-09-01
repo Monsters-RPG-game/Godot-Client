@@ -1,4 +1,4 @@
-extends "res://characters/abstract/base_character.gd"
+extends BaseCharacter
 
 @onready var detection_area: DetectionArea = $DetectionArea
 @onready var interaction_area: InteractionArea = $InteractionArea

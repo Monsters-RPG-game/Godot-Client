@@ -1,4 +1,4 @@
-extends "res://characters/abstract/base_character.gd"
+extends BaseCharacter
 
 signal player_attack(damage,area_id)
 
