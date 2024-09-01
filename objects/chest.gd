@@ -5,7 +5,7 @@ class_name Chest
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var ui = $ChestInventoryUI
-@export var inventory: Inventory
+@export var inv: Inv 
 
 var is_open = false
 
@@ -23,3 +23,6 @@ func _on_interact():
 		is_open = false
 		ui.is_open = false
 		state_machine.travel("Closing")
+		
+func put_item_in(item):
+	inv.insert(item)

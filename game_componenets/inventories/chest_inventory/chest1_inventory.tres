@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://d1yxyaab827c6"]
-
-[ext_resource type="Resource" uid="uid://dmr0u4fogrjmq" path="res://game_componenets/inventories/inventory_items/arrow.tres" id="1_5g4qu"]
-[ext_resource type="Script" path="res://game_componenets/inventories/abstract/inventory.gd" id="2_3sakk"]
-
-[resource]
-script = ExtResource("2_3sakk")
-items = Array[Resource("res://game_componenets/inventories/abstract/invetory_item.gd")]([ExtResource("1_5g4qu"), null, null, null, null, null, null, null, null, null, null, null])

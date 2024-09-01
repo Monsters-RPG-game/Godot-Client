@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dmr0u4fogrjmq"]
+
+[ext_resource type="Script" path="res://game_componenets/inventory/abstract/inv_item.gd" id="1_esirh"]
+[ext_resource type="Texture2D" uid="uid://d0bfa643uovse" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_hml5t"]
+
+[resource]
+script = ExtResource("1_esirh")
+name = "Arrow"
+texture = ExtResource("2_hml5t")
+collactable = true
