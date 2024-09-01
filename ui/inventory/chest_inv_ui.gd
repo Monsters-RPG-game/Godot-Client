@@ -2,6 +2,7 @@ extends Control
 
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var inv: Inv = self.get_parent().inv
+
 var is_open = false
 
 func _ready():

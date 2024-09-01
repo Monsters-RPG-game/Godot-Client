@@ -113,6 +113,7 @@ offset_left = 1.0
 offset_top = 14.0
 offset_right = 80.0
 offset_bottom = 58.0
+scale = Vector2(1.0527, 0.993704)
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

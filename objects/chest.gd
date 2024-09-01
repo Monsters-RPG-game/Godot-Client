@@ -14,12 +14,12 @@ func _ready():
 	
 func _on_interact():
 	if is_open == false: 
-		interaction_area.action_name = "close"
 		is_open = true
+		interaction_area.action_name = "close"
 		state_machine.travel("Opening")
 		ui.is_open = true
 	else:
-		interaction_area.action_name = "open"
 		is_open = false
+		interaction_area.action_name = "open"
 		ui.is_open = false
 		state_machine.travel("Closing")
