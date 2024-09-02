@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds1emcry41duo"]
 
-[ext_resource type="Script" path="res://game_componenets/ui/inventory/chest_inv_ui.gd" id="1_qh3r4"]
+[ext_resource type="Script" path="res://game_componenets/ui/inventory/player_inv_ui.gd" id="1_tc4gk"]
 [ext_resource type="Texture2D" uid="uid://c8tfmx3hg1q2h" path="res://assets/Retro Inventory/Original/Inventory_9Slices.png" id="2_o6fch"]
 [ext_resource type="PackedScene" uid="uid://k8jllp47sxff" path="res://game_componenets/ui/inventory/inv_slot_ui.tscn" id="3_dkvfa"]
 
@@ -13,7 +13,7 @@ offset_bottom = 64.0
 scale = Vector2(0.50438, 0.549713)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_qh3r4")
+script = ExtResource("1_tc4gk")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1

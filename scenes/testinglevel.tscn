@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=22 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
 [ext_resource type="PackedScene" uid="uid://diob2oa42f8ru" path="res://game_componenets/ui/ui_manager.tscn" id="2_4mrr3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xodwafyxdal1" path="res://objects/collactable_item.tscn" id="12_40li2"]
 [ext_resource type="PackedScene" uid="uid://drvds4tr77rt2" path="res://characters/enemy.tscn" id="12_co3lm"]
 [ext_resource type="Resource" uid="uid://dmr0u4fogrjmq" path="res://game_componenets/inventory/items/arrow.tres" id="13_giodu"]
+[ext_resource type="Resource" uid="uid://cpuf2u4jg1uea" path="res://game_componenets/inventory/chest_inv/chest1_inv.tres" id="13_t5ff3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_135pt"]
 texture = ExtResource("2_g247p")
@@ -942,6 +943,7 @@ position = Vector2(182, 21)
 
 [node name="Chest" parent="Map" instance=ExtResource("2_54ptd")]
 position = Vector2(-29, -13)
+inv = ExtResource("13_t5ff3")
 
 [node name="CollectableItem" parent="Map" instance=ExtResource("12_40li2")]
 position = Vector2(50, 48)

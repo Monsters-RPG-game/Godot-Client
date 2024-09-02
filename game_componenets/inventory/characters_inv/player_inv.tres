@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=18 format=3 uid="uid://sw245yp5aatt"]
+[gd_resource type="Resource" script_class="Inv" load_steps=19 format=3 uid="uid://sw245yp5aatt"]
 
 [ext_resource type="Script" path="res://game_componenets/inventory/abstract/inv.gd" id="1_pp3p4"]
 [ext_resource type="Script" path="res://game_componenets/inventory/abstract/inv_slot.gd" id="2_0vy11"]
+[ext_resource type="Resource" uid="uid://dmr0u4fogrjmq" path="res://game_componenets/inventory/items/arrow.tres" id="2_yvvlk"]
 
 [sub_resource type="Resource" id="Resource_jn6bw"]
 script = ExtResource("2_0vy11")
-amount = 0
+item = ExtResource("2_yvvlk")
+amount = 2
 
 [sub_resource type="Resource" id="Resource_3dmgb"]
 script = ExtResource("2_0vy11")
