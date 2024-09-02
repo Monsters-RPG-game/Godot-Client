@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkttfobr3vnci"]
 
-[ext_resource type="Script" path="res://ui/inventory/chest_inv_ui.gd" id="1_8wqwh"]
+[ext_resource type="Script" path="res://game_componenets/ui/inventory/chest_inv_ui.gd" id="1_8wqwh"]
 [ext_resource type="Texture2D" uid="uid://c8tfmx3hg1q2h" path="res://assets/Retro Inventory/Original/Inventory_9Slices.png" id="2_37llk"]
-[ext_resource type="PackedScene" uid="uid://k8jllp47sxff" path="res://ui/inventory/inv_slot_ui.tscn" id="3_dmbmw"]
+[ext_resource type="PackedScene" uid="uid://k8jllp47sxff" path="res://game_componenets/ui/inventory/inv_slot_ui.tscn" id="3_dmbmw"]
 
 [node name="ChestInventoryUI" type="Control"]
 z_index = 20

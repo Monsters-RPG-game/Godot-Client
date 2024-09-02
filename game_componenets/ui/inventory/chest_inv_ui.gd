@@ -1,7 +1,7 @@
 extends Control
 
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
-@onready var inv: Inv = self.get_parent().inv
+@onready var inv: Inv = get_tree().get_first_node_in_group('player').inv
 
 var is_open = false
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://diob2oa42f8ru"]
+
+[ext_resource type="Script" path="res://game_componenets/ui/ui_manager.gd" id="1_12vrn"]
+[ext_resource type="PackedScene" uid="uid://ds1emcry41duo" path="res://game_componenets/ui/inventory/player_inv_ui.tscn" id="1_ocdsb"]
+
+[node name="UIManager" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12vrn")
+
+[node name="PlayerInventoryUI" parent="." instance=ExtResource("1_ocdsb")]

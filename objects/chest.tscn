@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://objects/chest.gd" id="1_ja5bo"]
 [ext_resource type="Resource" uid="uid://d15xj1cg5f2u5" path="res://game_componenets/inventory/chest_inv/chest1_inv.tres" id="2_w55k7"]
 [ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="4_0gb0y"]
-[ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://ui/inventory/chest_inv_ui.tscn" id="5_ik4io"]
+[ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://game_componenets/ui/inventory/chest_inv_ui.tscn" id="5_ik4io"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cifb"]
 size = Vector2(8, 1)

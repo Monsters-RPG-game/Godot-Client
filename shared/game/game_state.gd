@@ -1,5 +1,5 @@
 extends Node
 
-var in_dialog = false;
+var in_dialog: bool = false
 
 

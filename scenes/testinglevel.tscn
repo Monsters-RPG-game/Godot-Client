@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=21 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
+[ext_resource type="PackedScene" uid="uid://diob2oa42f8ru" path="res://game_componenets/ui/ui_manager.tscn" id="2_4mrr3"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="2_54ptd"]
 [ext_resource type="Texture2D" uid="uid://tfcu4wijiwq4" path="res://assets/sprites/tilesets/plains.png" id="2_g247p"]
 [ext_resource type="Texture2D" uid="uid://cphbc1rxl4gft" path="res://assets/sprites/tilesets/grass.png" id="3_yevpe"]
@@ -905,6 +906,8 @@ sources/4 = SubResource("TileSetAtlasSource_xkuob")
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7iw2h")
 enemies_number = 10
+
+[node name="UIManager" parent="." instance=ExtResource("2_4mrr3")]
 
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true

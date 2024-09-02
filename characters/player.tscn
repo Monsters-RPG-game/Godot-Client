@@ -1,9 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://drh5r8mlu6fyy"]
+[gd_scene load_steps=41 format=3 uid="uid://drh5r8mlu6fyy"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_8njau"]
 [ext_resource type="Texture2D" uid="uid://dnufa52b01qjl" path="res://assets/sprites/characters/player.png" id="1_8uqld"]
 [ext_resource type="Resource" uid="uid://sw245yp5aatt" path="res://game_componenets/inventory/characters_inv/player_inv.tres" id="2_l0dwk"]
-[ext_resource type="PackedScene" uid="uid://ds1emcry41duo" path="res://ui/inventory/player_inv_ui.tscn" id="4_08hmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwrfe"]
 size = Vector2(22, 11)
@@ -575,13 +574,6 @@ shape = SubResource("CircleShape2D_473lk")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 1.3
 one_shot = true
-
-[node name="PlayerInventoryUI" parent="." instance=ExtResource("4_08hmo")]
-offset_left = 10.0
-offset_top = -31.0
-offset_right = 91.0
-offset_bottom = 33.0
-scale = Vector2(1.43837, 1.35332)
 
 [connection signal="area_entered" from="Sprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
