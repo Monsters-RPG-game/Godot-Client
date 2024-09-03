@@ -1,7 +1,7 @@
 extends Control
 
 @onready var player_inv_ui = $PlayerInventoryUI
-@onready var other_inv_ui = $ChestInventoryUI
+@onready var other_inv_ui = $OtherInventoryUI
 @onready var invs_array: Array = get_tree().get_nodes_in_group("inventories")
 
 signal closed_inv_ui
