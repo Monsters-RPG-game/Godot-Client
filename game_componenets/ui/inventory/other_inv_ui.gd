@@ -1,14 +1,12 @@
 extends Control
 
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
-@onready var inv: Inv
 @onready var invs_array: Array = get_tree().get_nodes_in_group("inventories")
+var inv: Inv
 
 var is_open = false
 
 func _ready():
-	for i in invs_array.size():
-		invs_array[i].opened.connect(update_slots)
 	is_open = false
 	visible = false
 	

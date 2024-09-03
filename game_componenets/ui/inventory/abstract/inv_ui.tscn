@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkttfobr3vnci"]
+
+[ext_resource type="Texture2D" uid="uid://c8tfmx3hg1q2h" path="res://assets/Retro Inventory/Original/Inventory_9Slices.png" id="2_2xhci"]
+[ext_resource type="PackedScene" uid="uid://k8jllp47sxff" path="res://game_componenets/ui/inventory/abstract/inv_slot_ui.tscn" id="3_l1ryh"]
+
+[node name="InventoryUI" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_right = 81.0
+offset_bottom = 81.0
+scale = Vector2(3.95491, 4.534)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_left = -0.675617
+offset_top = -0.298989
+offset_right = 39.3244
+offset_bottom = 39.701
+scale = Vector2(2.01545, 1.99279)
+texture = ExtResource("2_2xhci")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.8098
+offset_top = -15.7827
+offset_right = 16.1902
+offset_bottom = 12.2173
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.971087, 0.961672)
+columns = 4
+
+[node name="InventorySlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
+layout_mode = 2
