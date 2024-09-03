@@ -6,7 +6,7 @@ func _ready():
 	update_animation_parameter(starting_direction)
 
 func _physics_process(delta): 
-	if (!GameState.in_dialog):
+	if !GameState.in_dialog:
 		var input_direction = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")

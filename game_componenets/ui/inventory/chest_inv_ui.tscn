@@ -8,9 +8,11 @@
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
-offset_right = 81.0
-offset_bottom = 64.0
-scale = Vector2(0.50438, 0.549713)
+offset_left = 416.0
+offset_top = -5.0
+offset_right = 497.0
+offset_bottom = 59.0
+scale = Vector2(5.8085, 6.5773)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_xxvwq")

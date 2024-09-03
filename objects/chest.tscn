@@ -1,10 +1,66 @@
-[gd_scene load_steps=17 format=3 uid="uid://3xf8plt3tag6"]
+[gd_scene load_steps=31 format=3 uid="uid://3xf8plt3tag6"]
 
 [ext_resource type="Texture2D" uid="uid://barxwynvvndg1" path="res://assets/sprites/objects/chest_01.png" id="1_24yot"]
 [ext_resource type="Script" path="res://objects/chest.gd" id="1_ja5bo"]
-[ext_resource type="Resource" uid="uid://d15xj1cg5f2u5" path="res://game_componenets/inventory/chest_inv/chest1_inv.tres" id="2_w55k7"]
+[ext_resource type="Script" path="res://game_componenets/inventory/abstract/inv.gd" id="2_gwb15"]
+[ext_resource type="Resource" uid="uid://dmr0u4fogrjmq" path="res://game_componenets/inventory/items/arrow.tres" id="3_0tt21"]
 [ext_resource type="Script" path="res://game_componenets/interactions/interaction_area.gd" id="4_0gb0y"]
-[ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://game_componenets/ui/inventory/chest_inv_ui.tscn" id="5_ik4io"]
+[ext_resource type="Script" path="res://game_componenets/inventory/abstract/inv_slot.gd" id="4_ekfh1"]
+
+[sub_resource type="Resource" id="Resource_owhcr"]
+script = ExtResource("4_ekfh1")
+item = ExtResource("3_0tt21")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_v5rh5"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_605nq"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_8abg4"]
+script = ExtResource("4_ekfh1")
+item = ExtResource("3_0tt21")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_d8fvq"]
+script = ExtResource("4_ekfh1")
+item = ExtResource("3_0tt21")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_1bbpy"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_tj5ij"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_8bfxv"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_caaht"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_0s5qf"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_iw1ps"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_x5vne"]
+script = ExtResource("4_ekfh1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_pvio4"]
+script = ExtResource("2_gwb15")
+slots = Array[ExtResource("4_ekfh1")]([SubResource("Resource_owhcr"), SubResource("Resource_v5rh5"), SubResource("Resource_605nq"), SubResource("Resource_8abg4"), SubResource("Resource_d8fvq"), SubResource("Resource_1bbpy"), SubResource("Resource_tj5ij"), SubResource("Resource_8bfxv"), SubResource("Resource_caaht"), SubResource("Resource_0s5qf"), SubResource("Resource_iw1ps"), SubResource("Resource_x5vne")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cifb"]
 size = Vector2(8, 1)
@@ -78,7 +134,7 @@ radius = 15.0
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
 script = ExtResource("1_ja5bo")
-inv = ExtResource("2_w55k7")
+inv = SubResource("Resource_pvio4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17.5)
@@ -107,13 +163,6 @@ action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_v1nnn")
-
-[node name="ChestInventoryUI" parent="." instance=ExtResource("5_ik4io")]
-offset_left = 1.0
-offset_top = 14.0
-offset_right = 80.0
-offset_bottom = 58.0
-scale = Vector2(1.0527, 0.993704)
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

@@ -21,6 +21,7 @@ InteractionManager="*res://game_componenets/interactions/interaction_manager.tsc
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://shared/game/game_state.gd"
 ServerConnection="*res://shared/server_communication/index.gd"
+UIManager="*res://game_componenets/ui/ui_manager.tscn"
 
 [dialogue_manager]
 

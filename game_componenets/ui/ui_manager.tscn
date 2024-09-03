@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://diob2oa42f8ru"]
+[gd_scene load_steps=4 format=3 uid="uid://diob2oa42f8ru"]
 
 [ext_resource type="Script" path="res://game_componenets/ui/ui_manager.gd" id="1_12vrn"]
 [ext_resource type="PackedScene" uid="uid://ds1emcry41duo" path="res://game_componenets/ui/inventory/player_inv_ui.tscn" id="1_ocdsb"]
+[ext_resource type="PackedScene" uid="uid://bkttfobr3vnci" path="res://game_componenets/ui/inventory/chest_inv_ui.tscn" id="3_b7wxv"]
 
 [node name="UIManager" type="Control"]
 process_mode = 3
@@ -14,3 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_12vrn")
 
 [node name="PlayerInventoryUI" parent="." instance=ExtResource("1_ocdsb")]
+scale = Vector2(3.23784, 4.12456)
+
+[node name="ChestInventoryUI" parent="." instance=ExtResource("3_b7wxv")]
+offset_left = 895.0
+offset_right = 976.0
+scale = Vector2(3.20139, 4.00909)

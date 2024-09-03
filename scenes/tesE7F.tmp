@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dj5acka4geqik"]
+[gd_scene load_steps=22 format=3 uid="uid://dj5acka4geqik"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_7iw2h"]
+[ext_resource type="PackedScene" uid="uid://diob2oa42f8ru" path="res://game_componenets/ui/ui_manager.tscn" id="2_4mrr3"]
 [ext_resource type="PackedScene" uid="uid://3xf8plt3tag6" path="res://objects/chest.tscn" id="2_54ptd"]
 [ext_resource type="Texture2D" uid="uid://tfcu4wijiwq4" path="res://assets/sprites/tilesets/plains.png" id="2_g247p"]
 [ext_resource type="Texture2D" uid="uid://cphbc1rxl4gft" path="res://assets/sprites/tilesets/grass.png" id="3_yevpe"]
@@ -907,14 +908,13 @@ sources/4 = SubResource("TileSetAtlasSource_xkuob")
 script = ExtResource("1_7iw2h")
 enemies_number = 10
 
+[node name="UIManager" parent="." instance=ExtResource("2_4mrr3")]
+
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(548, 385)
-scale = Vector2(2, 2)
 
 [node name="Enemy" parent="Map" instance=ExtResource("12_co3lm")]
 position = Vector2(132, 104)
-SPEED = 13000
 
 [node name="TileMap" type="TileMap" parent="Map"]
 y_sort_enabled = true
@@ -929,7 +929,10 @@ layer_1/tile_data = PackedInt32Array(-393216, 65536, 4, -327680, 65536, 5, -2621
 
 [node name="Player" parent="Map" groups=["player"] instance=ExtResource("7_aa6jo")]
 position = Vector2(-45, -24)
-SPEED = 15000
+
+[node name="Camera2D" type="Camera2D" parent="Map"]
+zoom = Vector2(2, 2)
+metadata/_edit_lock_ = true
 
 [node name="Door" parent="Map" instance=ExtResource("10_fds2y")]
 z_index = 1
@@ -937,7 +940,6 @@ position = Vector2(15, 7)
 
 [node name="NPC" parent="Map" instance=ExtResource("11_ppcel")]
 position = Vector2(227, -21)
-SPEED = 12000
 
 [node name="Chest" parent="Map" groups=["inventories"] instance=ExtResource("2_54ptd")]
 position = Vector2(-29, -13)
@@ -950,7 +952,3 @@ item = ExtResource("13_giodu")
 [node name="CollectableItem2" parent="Map" instance=ExtResource("12_40li2")]
 position = Vector2(19, 47)
 item = ExtResource("13_giodu")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 333)
-scale = Vector2(16.989, 7.03274)
