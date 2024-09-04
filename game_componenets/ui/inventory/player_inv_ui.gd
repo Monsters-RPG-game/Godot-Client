@@ -1,4 +1,4 @@
-extends "res://game_componenets/ui/inventory/inv_ui.gd"
+extends "res://game_componenets/ui/inventory/abstract/inv_ui.gd"
 
 func _ready():
 	inv = get_tree().get_first_node_in_group('player').inv

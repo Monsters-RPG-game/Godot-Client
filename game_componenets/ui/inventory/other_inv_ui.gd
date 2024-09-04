@@ -1,4 +1,4 @@
-extends "res://game_componenets/ui/inventory/inv_ui.gd"
+extends "res://game_componenets/ui/inventory/abstract/inv_ui.gd"
 
 @onready var invs_array: Array = get_tree().get_nodes_in_group("inventories")
 
