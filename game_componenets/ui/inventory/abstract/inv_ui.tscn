@@ -44,48 +44,64 @@ columns = 4
 
 [node name="InventorySlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 1
 
 [node name="InventorySlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 2
 
 [node name="InventorySlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 3
 
 [node name="InventorySlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 4
 
 [node name="InventorySlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 5
 
 [node name="InventorySlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 6
 
 [node name="InventorySlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 7
 
 [node name="InventorySlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 8
 
 [node name="InventorySlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 9
 
 [node name="InventorySlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 10
 
 [node name="InventorySlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 11
 
 [node name="InventorySlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 12
 
 [node name="InventorySlot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 13
 
 [node name="InventorySlot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 14
 
 [node name="InventorySlot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 15
 
 [node name="InventorySlot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l1ryh")]
 layout_mode = 2
+slot_id = 16

@@ -4,21 +4,19 @@ class_name UIInvSlot
 @onready var item_display: Sprite2D = $CenterContainer/Panel/ItemDisplay
 @onready var amount_label: Label = $CenterContainer/Panel/AmountLabel
 @onready var slot: InvSlot
+@export var slot_id :int
+
+signal item_taken(slot_id)
+signal item_droped(slot_id)
 
 var focused = false
-var grabed = false
 
 func _process(_delta):
 	if focused:
-		if Input.is_action_just_pressed('l_click') and !GameState.grabed_item:
-			GameState.grabed_item = slot
-			var empty_slot: InvSlot = InvSlot.new()
-			empty_slot.item = null
-			empty_slot.amount = 0
-			update(empty_slot)
-		if Input.is_action_just_released("l_click") and GameState.grabed_item:
-			update(GameState.grabed_item)
-			GameState.grabed_item = null
+		if Input.is_action_just_pressed('l_click') and !GameState.grabed_item.item:
+			item_taken.emit(slot_id)
+		if Input.is_action_just_released("l_click") and GameState.grabed_item.item:
+			item_droped.emit(slot_id)
 
 
 func update(new_slot: InvSlot):
@@ -27,7 +25,6 @@ func update(new_slot: InvSlot):
 		amount_label.visible = false
 		slot = null
 	else:
-		print('updated')
 		slot = new_slot
 		item_display.visible = true
 		item_display.texture = slot.item.texture 
